@@ -7,4 +7,6 @@
 2. Build image from sources
 3. Make a file structure for mounting to container
 e.g. </data/input/some_dataset/Images/>, </data/output/infer/>
+![Tree structure example](./tree_structure_template.png)
+
 4. Run using <launch.sh> script
