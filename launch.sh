@@ -1,5 +1,7 @@
 # run script as 'sh launch.sh hover:1.0'
 
+REPO='https://github.com/uit-hdl/hovernet-pipeline.git'
+
 # Hover mountpoint location
 MOUNTPOINT='/Data'
 
@@ -14,7 +16,7 @@ docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 \
         -v ${MOUNTPOINT}/hover_mountpoint/input/:/data/input \
 	-e H_PROFILE=${PROFILE} \
         $1 bash -c \
-	"git clone https://github.com/nsh23/hover_net.git; \
+	"git clone ${REPO}; \
 	cd hover_net; \
 	git fetch --all; git reset --hard origin/master; cd ./src/; \
 	bash"
