@@ -2,7 +2,7 @@
 
 REPO='https://github.com/uit-hdl/hovernet-pipeline.git'
 
-# Hover mountpoint location
+# Hover mountpoint location, specify full absolute path, where your 'hover_mountpoint' is
 MOUNTPOINT='/Data'
 
 # Profile by default ['hv_consep', 'hv_pannuke']
@@ -14,10 +14,10 @@ docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 \
         --gpus all --rm -it \
         -v ${MOUNTPOINT}/hover_mountpoint/output/:/data/output/ \
         -v ${MOUNTPOINT}/hover_mountpoint/input/:/data/input \
-	-e H_PROFILE=${PROFILE} \
+	    -e H_PROFILE=${PROFILE} \
         $1 bash -c \
 	"git clone ${REPO}; \
-	cd hover_net; \
+	cd hovernet-pipeline; \
 	git fetch --all; git reset --hard origin/master; cd ./src/; \
 	bash"
 fi
