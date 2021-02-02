@@ -1,4 +1,4 @@
-1. Install the following on your system:
+1. Install or verify that the following on your system:
  - Docker 
  - Nvidia-drivers
  - Nvidia docker
